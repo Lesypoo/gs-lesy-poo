@@ -1,35 +1,5 @@
-pipeline {
-  agent { docker { image 'maven:3.9.8-eclipse-temurin-17' } }
+Whitelabel Error Page
 
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-        sh 'echo "Current directory:" && pwd && ls -la'
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh 'mvn -B clean package -DskipTests'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        sh 'mvn test -q'
-      }
-    }
-
-    stage('Archive JAR') {
-      steps {
-        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-      }
-    }
-  }
-
-  post {
-    success { echo '✅ Build succeeded' }
-    failure { echo '❌ Build failed' }
-  }
-}
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+Sun Nov 02 20:58:12 EST 2025
+There was an unexpected error (type=Not Found, status=404).
