@@ -1,5 +1,18 @@
-Whitelabel Error Page
+package com.example.demo;
 
-This application has no explicit mapping for /error, so you are seeing this as a fallback.
-Sun Nov 02 20:58:12 EST 2025
-There was an unexpected error (type=Not Found, status=404).
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+
+    @GetMapping("/")
+    public String home() {
+        return "✅ Hello from Spring Boot!";
+    }
+
+    @GetMapping("/status")
+    public String status() {
+        return "App is running fine on " + java.time.LocalDateTime.now();
+    }
+}
