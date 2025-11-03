@@ -1,14 +1,35 @@
-version: "3.8"
-services:
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
-volumes:
-  jenkins_home:
+pipeline {
+  agent { docker { image 'maven:3.9.8-eclipse-temurin-17' } }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+        sh 'echo "Current directory:" && pwd && ls -la'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'mvn -B clean package -DskipTests'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'mvn test -q'
+      }
+    }
+
+    stage('Archive JAR') {
+      steps {
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+      }
+    }
+  }
+
+  post {
+    success { echo '✅ Build succeeded' }
+    failure { echo '❌ Build failed' }
+  }
+}
