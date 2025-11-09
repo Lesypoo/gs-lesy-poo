@@ -1,6 +1,1 @@
-CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS                    PORTS                                                                                          NAMES
-7e66c8feba6e   jenkins/jenkins:lts-jdk17   "/usr/bin/tini -- /u…"   4 minutes ago   Up 4 minutes              0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp   jenkinss
-9d1965412aaa   jenkins/jenkins:lts         "/usr/bin/tini -- /u…"   6 days ago      Exited (143) 6 days ago                                                                                                  jenkins
-6bcd266e520b   pulleym1/docker-hw3:v1      "python app.py"          4 weeks ago     Exited (2) 4 weeks ago                                                                                                   mycontainer
-7ee862ffe6ae   mysql/mysql-server          "/entrypoint.sh mysq…"   4 weeks ago     Exited (0) 4 weeks ago                                                                                                   mysql-test
-0a801d768632   740d7efdf233                "/bin/sh -c 'pip ins…"   4 weeks ago     Exited (1) 4 weeks ago                                                                                                   nice_perlman
+printf '{\n  "name":"hello-node","version":"1.0.0","scripts":{"test":"node -e \\"process.exit(0)\\""}, "private":true}\n' > package.json
