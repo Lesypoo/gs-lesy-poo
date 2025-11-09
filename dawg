@@ -1,1 +1,5 @@
-printf '{\n  "name":"hello-node","version":"1.0.0","scripts":{"test":"node -e \\"process.exit(0)\\""}, "private":true}\n' > package.json
+wafer7@CSIT345:~/hello-node$ git branch -M main
+wafer7@CSIT345:~/hello-node$ git remote add origin git@github.com:lesypoo/hw4-test.git
+error: remote origin already exists.
+wafer7@CSIT345:~/hello-node$ 
+
