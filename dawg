@@ -1,7 +1,11 @@
-Failed to connect to repository : Command "git ls-remote -h -- git@github.com:lesypoo/hw4-test.git HEAD" returned status code 128:
-stdout:
-stderr: Host key verification failed.
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
+pipeline {
+  agent any
+  tools { nodejs 'nodejs-lts' } // or run 'npm' installed on the agent
+  stages {
+    stage('Checkout') { steps { checkout scm } }
+    stage('Install')  { steps { sh 'npm ci || npm i' } }
+    stage('Test')     { steps { sh 'npm test' } }
+    stage('Build')    { steps { sh 'npm pack' } }
+    stage('Archive')  { steps { archiveArtifacts artifacts: '*.tgz', fingerprint: true } }
+  }
+}
