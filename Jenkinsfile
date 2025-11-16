@@ -1,35 +1,27 @@
 pipeline {
-  agent { docker { image 'maven:3.9.8-eclipse-temurin-17' } }
+    agent any
 
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-        sh 'echo "Current directory:" && pwd && ls -la'
-      }
+    tools {
+        maven 'maven3'
     }
 
-    stage('Build') {
-      steps {
-        sh 'mvn -B clean package -DskipTests'
-      }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/lesypoo/gs-lesy-poo.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
     }
 
-    stage('Test') {
-      steps {
-        sh 'mvn test -q'
-      }
+    post {
+        success {
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+        }
     }
-
-    stage('Archive JAR') {
-      steps {
-        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-      }
-    }
-  }
-
-  post {
-    success { echo 'Build succeeded' }
-    failure { echo 'Build failed' }
-  }
 }
