@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/YOUR_SPRINGBOOT_REPO.git'
+                git 'https://github.com/lesypoo/gs-lesy-poo.git'
             }
         }
 
