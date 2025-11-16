@@ -1,4 +1,5 @@
 Started by user admin
+
 Lightweight checkout support not available, falling back to full checkout.
 Checking out git https://github.com/Lesypoo/gs-lesy-poo.git into /var/jenkins_home/workspace/lesy@script/433dac803ccbaf3b46d18db16a78c275409bcb650eeedcfca7feb9c2c9ad77e9 to read Jenkinsfile
 Selected Git installation does not exist. Using Default
@@ -23,7 +24,8 @@ Commit message: "Update dawg"
  > git rev-list --no-walk 2ec7a22f79f383131d8b2c100fa3175ec4aa289a # timeout=10
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on Jenkins in /var/jenkins_home/workspace/lesy
+Running on Jenkins
+ in /var/jenkins_home/workspace/lesy
 [Pipeline] {
 [Pipeline] stage
 [Pipeline] { (Declarative: Checkout SCM)
