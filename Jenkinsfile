@@ -24,8 +24,9 @@ pipeline {
             steps {
                 withMaven(maven: 'maven3') {
                     sh 'mvn deploy -DskipTests'
+                }
+            }
         }
-    }
 
     post {
         success {
