@@ -1,31 +1,328 @@
 Started by user admin
 
 Obtained Jenkinsfile from git https://github.com/Lesypoo/gs-lesy-poo.git
-org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
-WorkflowScript: 36: expecting '}', found '' @ line 36, column 1.
-1 error
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /var/jenkins_home/workspace/lesy
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/lesy/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/lesypoo/gs-lesy-poo.git # timeout=10
+Fetching upstream changes from https://github.com/lesypoo/gs-lesy-poo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/lesypoo/gs-lesy-poo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision ed110bdf9cfb7996897b128639edb4eb4968fdca (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ed110bdf9cfb7996897b128639edb4eb4968fdca # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main ed110bdf9cfb7996897b128639edb4eb4968fdca # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk 2ba39a6ac290e25f6930f75f2727035333a5ab50 # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building leswork 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ demo ---
+[INFO] Deleting /var/jenkins_home/workspace/lesy/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ demo ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/lesy/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ demo ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ demo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.leswork.LesworkApplicationTests
+01:50:45.127 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.leswork.LesworkApplicationTests]: LesworkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:50:45.429 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.leswork.LesworkApplication for test class com.example.leswork.LesworkApplicationTests
 
-	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
-	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:149)
-	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:119)
-	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:131)
-	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:349)
-	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:225)
-	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:191)
-	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:233)
-	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:189)
-	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:966)
-	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:626)
-	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:602)
-	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:579)
-	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:323)
-	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:293)
-	at PluginClassLoader for script-security//org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox$Scope.parse(GroovySandbox.java:162)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:202)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:186)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:669)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:615)
-	at PluginClassLoader for workflow-job//org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:341)
-	at hudson.model.ResourceController.execute(ResourceController.java:101)
-	at hudson.model.Executor.run(Executor.java:460)
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2025-11-17T01:50:46.682Z  INFO 1070 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : Starting LesworkApplicationTests using Java 17.0.16 with PID 1070 (started by jenkins in /var/jenkins_home/workspace/lesy)
+2025-11-17T01:50:46.684Z  INFO 1070 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-11-17T01:50:50.585Z  INFO 1070 --- [leswork] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-17T01:50:50.724Z  INFO 1070 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : Started LesworkApplicationTests in 4.83 seconds (process running for 7.378)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.613 s -- in com.example.leswork.LesworkApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ demo ---
+[INFO] Building jar: /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.7:repackage (repackage) @ demo ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.776 s
+[INFO] Finished at: 2025-11-17T01:50:54Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Nexus)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn deploy -DskipTests
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building leswork 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.pom
+Progress (1): 772 B
+Progress (1): 1.8 kB
+Progress (1): 3.7 kB
+Progress (1): 7.5 kB
+Progress (1): 8.1 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.pom (8.1 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.jar
+Progress (1): 0.9/33 kB
+Progress (1): 2.3/33 kB
+Progress (1): 3.6/33 kB
+Progress (1): 5.0/33 kB
+Progress (1): 6.4/33 kB
+Progress (1): 7.7/33 kB
+Progress (1): 9.1/33 kB
+Progress (1): 10/33 kB 
+Progress (1): 12/33 kB
+Progress (1): 13/33 kB
+Progress (1): 15/33 kB
+Progress (1): 16/33 kB
+Progress (1): 17/33 kB
+Progress (1): 19/33 kB
+Progress (1): 20/33 kB
+Progress (1): 20/33 kB
+Progress (1): 21/33 kB
+Progress (1): 23/33 kB
+Progress (1): 24/33 kB
+Progress (1): 26/33 kB
+Progress (1): 27/33 kB
+Progress (1): 28/33 kB
+Progress (1): 30/33 kB
+Progress (1): 31/33 kB
+Progress (1): 32/33 kB
+Progress (1): 33 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.4/maven-install-plugin-3.1.4.jar (33 kB at 375 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.4/maven-deploy-plugin-3.1.4.pom
+Progress (1): 762 B
+Progress (1): 1.7 kB
+Progress (1): 3.8 kB
+Progress (1): 8.0 kB
+Progress (1): 9.2 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.4/maven-deploy-plugin-3.1.4.pom (9.2 kB at 121 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.4/maven-deploy-plugin-3.1.4.jar
+Progress (1): 0.9/40 kB
+Progress (1): 2.3/40 kB
+Progress (1): 3.6/40 kB
+Progress (1): 5.0/40 kB
+Progress (1): 6.4/40 kB
+Progress (1): 7.7/40 kB
+Progress (1): 9.1/40 kB
+Progress (1): 10/40 kB 
+Progress (1): 12/40 kB
+Progress (1): 16/40 kB
+Progress (1): 20/40 kB
+Progress (1): 24/40 kB
+Progress (1): 29/40 kB
+Progress (1): 33/40 kB
+Progress (1): 37/40 kB
+Progress (1): 40 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.4/maven-deploy-plugin-3.1.4.jar (40 kB at 332 kB/s)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/lesy/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ demo ---
+[INFO] 
+[INFO] --- spring-boot:3.5.7:repackage (repackage) @ demo ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ demo ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.pom
+Progress (1): 840 B
+Progress (1): 2.2 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.pom (2.2 kB at 31 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/1.9.22/maven-resolver-1.9.22.pom
+Progress (1): 759 B
+Progress (1): 2.3 kB
+Progress (1): 4.0 kB
+Progress (1): 9.3 kB
+Progress (1): 12 kB 
+Progress (1): 17 kB
+Progress (1): 19 kB
+Progress (1): 20 kB
+Progress (1): 23 kB
+Progress (1): 23 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver/1.9.22/maven-resolver-1.9.22.pom (23 kB at 367 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.pom
+Progress (1): 831 B
+Progress (1): 2.2 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.pom (2.2 kB at 45 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar
+Progress (1): 3.8/196 kB
+Progress (1): 8.0/196 kB
+Progress (1): 12/196 kB 
+Progress (1): 16/196 kB
+Progress (1): 21/196 kB
+Progress (1): 25/196 kB
+Progress (1): 29/196 kB
+Progress (1): 33/196 kB
+Progress (1): 37/196 kB
+Progress (1): 41/196 kB
+Progress (1): 46/196 kB
+Progress (1): 50/196 kB
+Progress (1): 54/196 kB
+Progress (1): 58/196 kB
+Progress (1): 63/196 kB
+Progress (1): 67/196 kB
+Progress (1): 71/196 kB
+Progress (1): 75/196 kB
+Progress (1): 80/196 kB
+Progress (1): 84/196 kB
+Progress (1): 88/196 kB
+Progress (1): 92/196 kB
+Progress (1): 96/196 kB
+Progress (1): 101/196 kB
+Progress (1): 117/196 kB
+Progress (1): 133/196 kB
+Progress (1): 150/196 kB
+Progress (1): 156/196 kB
+Progress (1): 172/196 kB
+Progress (1): 188/196 kB
+Progress (1): 196 kB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar (196 kB at 1.4 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar
+Progress (1): 7.7/157 kB
+Progress (1): 16/157 kB 
+Progress (1): 25/157 kB
+Progress (1): 41/157 kB
+Progress (1): 57/157 kB
+Progress (1): 74/157 kB
+Progress (1): 90/157 kB
+Progress (1): 106/157 kB
+Progress (1): 123/157 kB
+Progress (1): 139/157 kB
+Progress (1): 156/157 kB
+Progress (1): 157 kB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar (157 kB at 1.2 MB/s)
+[INFO] Installing /var/jenkins_home/workspace/lesy/pom.xml to /var/jenkins_home/.m2/repository/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.pom
+[INFO] Installing /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- deploy:3.1.4:deploy (default-deploy) @ demo ---
+Downloading from nexus: http://localhost:8081/repository/maven-releases/com/example/demo/0.0.1-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata com.example:demo:0.0.1-SNAPSHOT/maven-metadata.xml from/to nexus (http://localhost:8081/repository/maven-releases/): Connect to localhost:8081 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.710 s
+[INFO] Finished at: 2025-11-17T01:51:03Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.4:deploy (default-deploy) on project demo: Failed to retrieve remote metadata com.example:demo:0.0.1-SNAPSHOT/maven-metadata.xml: Could not transfer metadata com.example:demo:0.0.1-SNAPSHOT/maven-metadata.xml from/to nexus (http://localhost:8081/repository/maven-releases/): Connect to localhost:8081 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
 Finished: FAILURE
