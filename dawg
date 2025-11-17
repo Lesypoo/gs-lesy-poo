@@ -1,22 +1,919 @@
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+Started by user admin
 
-  <servers>
-    <server>
-      <id>nexus</id>
-      <username>admin</username>
-      <password>10ad3d92-be51-4fcf-add7-f6bb71bc58a7</password>
-    </server>
-  </servers>
+Obtained Jenkinsfile from git https://github.com/Lesypoo/gs-lesy-poo.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /var/jenkins_home/workspace/lesy
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/lesy/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/lesypoo/gs-lesy-poo.git # timeout=10
+Fetching upstream changes from https://github.com/lesypoo/gs-lesy-poo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/lesypoo/gs-lesy-poo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision d58ade4f5bc8cf59cf034975866fe81838ff465e (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d58ade4f5bc8cf59cf034975866fe81838ff465e # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main d58ade4f5bc8cf59cf034975866fe81838ff465e # timeout=10
+Commit message: "Update dawg"
+ > git rev-list --no-walk 9af30cb50f86aca68741bb08c934f2adec61fb7f # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building leswork 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ demo ---
+[INFO] Deleting /var/jenkins_home/workspace/lesy/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ demo ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/lesy/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ demo ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ demo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.leswork.LesworkApplicationTests
+02:46:32.370 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.leswork.LesworkApplicationTests]: LesworkApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:46:32.688 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.leswork.LesworkApplication for test class com.example.leswork.LesworkApplicationTests
 
-  <mirrors>
-    <mirror>
-      <id>nexus</id>
-      <mirrorOf>*</mirrorOf>
-      <url>http://172.17.0.3:8081/repository/maven-public/</url>
-    </mirror>
-  </mirrors>
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
 
-</settings>
+ :: Spring Boot ::                (v3.5.7)
+
+2025-11-17T02:46:34.592Z  INFO 2677 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : Starting LesworkApplicationTests using Java 17.0.16 with PID 2677 (started by jenkins in /var/jenkins_home/workspace/lesy)
+2025-11-17T02:46:34.594Z  INFO 2677 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2025-11-17T02:46:40.712Z  INFO 2677 --- [leswork] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-17T02:46:40.847Z  INFO 2677 --- [leswork] [           main] c.e.leswork.LesworkApplicationTests      : Started LesworkApplicationTests in 7.427 seconds (process running for 10.376)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.07 s -- in com.example.leswork.LesworkApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ demo ---
+[INFO] Building jar: /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.7:repackage (repackage) @ demo ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  24.039 s
+[INFO] Finished at: 2025-11-17T02:46:45Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Nexus)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn deploy -DskipTests
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building leswork 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/lesy/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ demo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ demo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ demo ---
+[INFO] 
+[INFO] --- spring-boot:3.5.7:repackage (repackage) @ demo ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ demo ---
+[INFO] Installing /var/jenkins_home/workspace/lesy/pom.xml to /var/jenkins_home/.m2/repository/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.pom
+[INFO] Installing /var/jenkins_home/workspace/lesy/target/demo-0.0.1-SNAPSHOT.jar to /var/jenkins_home/.m2/repository/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- deploy:3.1.4:deploy (default-deploy) @ demo ---
+Downloading from nexus: http://172.17.0.3:8081/repository/maven-releases/com/example/demo/0.0.1-SNAPSHOT/maven-metadata.xml
+Uploading to nexus: http://172.17.0.3:8081/repository/maven-releases/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-20251117.024650-1.pom
+Progress (1): 1.7 kB
+                    
+Uploading to nexus: http://172.17.0.3:8081/repository/maven-releases/com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-20251117.024650-1.jar
+Progress (1): 0/24 MB
+Progress (1): 0.1/24 MB
+Progress (1): 0.1/24 MB
+Progress (1): 0.1/24 MB
+Progress (1): 0.2/24 MB
+Progress (1): 0.2/24 MB
+Progress (1): 0.2/24 MB
+Progress (1): 0.3/24 MB
+Progress (1): 0.3/24 MB
+Progress (1): 0.3/24 MB
+Progress (1): 0.4/24 MB
+Progress (1): 0.4/24 MB
+Progress (1): 0.4/24 MB
+Progress (1): 0.5/24 MB
+Progress (1): 0.5/24 MB
+Progress (1): 0.5/24 MB
+Progress (1): 0.6/24 MB
+Progress (1): 0.6/24 MB
+Progress (1): 0.6/24 MB
+Progress (1): 0.7/24 MB
+Progress (1): 0.7/24 MB
+Progress (1): 0.7/24 MB
+Progress (1): 0.8/24 MB
+Progress (1): 0.8/24 MB
+Progress (1): 0.8/24 MB
+Progress (1): 0.9/24 MB
+Progress (1): 0.9/24 MB
+Progress (1): 0.9/24 MB
+Progress (1): 1.0/24 MB
+Progress (1): 1.0/24 MB
+Progress (1): 1.0/24 MB
+Progress (1): 1.0/24 MB
+Progress (1): 1.1/24 MB
+Progress (1): 1.1/24 MB
+Progress (1): 1.1/24 MB
+Progress (1): 1.2/24 MB
+Progress (1): 1.2/24 MB
+Progress (1): 1.2/24 MB
+Progress (1): 1.3/24 MB
+Progress (1): 1.3/24 MB
+Progress (1): 1.3/24 MB
+Progress (1): 1.4/24 MB
+Progress (1): 1.4/24 MB
+Progress (1): 1.4/24 MB
+Progress (1): 1.5/24 MB
+Progress (1): 1.5/24 MB
+Progress (1): 1.5/24 MB
+Progress (1): 1.6/24 MB
+Progress (1): 1.6/24 MB
+Progress (1): 1.6/24 MB
+Progress (1): 1.7/24 MB
+Progress (1): 1.7/24 MB
+Progress (1): 1.7/24 MB
+Progress (1): 1.8/24 MB
+Progress (1): 1.8/24 MB
+Progress (1): 1.8/24 MB
+Progress (1): 1.9/24 MB
+Progress (1): 1.9/24 MB
+Progress (1): 1.9/24 MB
+Progress (1): 2.0/24 MB
+Progress (1): 2.0/24 MB
+Progress (1): 2.0/24 MB
+Progress (1): 2.1/24 MB
+Progress (1): 2.1/24 MB
+Progress (1): 2.1/24 MB
+Progress (1): 2.2/24 MB
+Progress (1): 2.2/24 MB
+Progress (1): 2.2/24 MB
+Progress (1): 2.3/24 MB
+Progress (1): 2.3/24 MB
+Progress (1): 2.3/24 MB
+Progress (1): 2.4/24 MB
+Progress (1): 2.4/24 MB
+Progress (1): 2.4/24 MB
+Progress (1): 2.5/24 MB
+Progress (1): 2.5/24 MB
+Progress (1): 2.5/24 MB
+Progress (1): 2.6/24 MB
+Progress (1): 2.6/24 MB
+Progress (1): 2.6/24 MB
+Progress (1): 2.7/24 MB
+Progress (1): 2.7/24 MB
+Progress (1): 2.7/24 MB
+Progress (1): 2.8/24 MB
+Progress (1): 2.8/24 MB
+Progress (1): 2.8/24 MB
+Progress (1): 2.9/24 MB
+Progress (1): 2.9/24 MB
+Progress (1): 2.9/24 MB
+Progress (1): 2.9/24 MB
+Progress (1): 3.0/24 MB
+Progress (1): 3.0/24 MB
+Progress (1): 3.0/24 MB
+Progress (1): 3.1/24 MB
+Progress (1): 3.1/24 MB
+Progress (1): 3.1/24 MB
+Progress (1): 3.2/24 MB
+Progress (1): 3.2/24 MB
+Progress (1): 3.2/24 MB
+Progress (1): 3.3/24 MB
+Progress (1): 3.3/24 MB
+Progress (1): 3.3/24 MB
+Progress (1): 3.4/24 MB
+Progress (1): 3.4/24 MB
+Progress (1): 3.4/24 MB
+Progress (1): 3.5/24 MB
+Progress (1): 3.5/24 MB
+Progress (1): 3.5/24 MB
+Progress (1): 3.6/24 MB
+Progress (1): 3.6/24 MB
+Progress (1): 3.6/24 MB
+Progress (1): 3.7/24 MB
+Progress (1): 3.7/24 MB
+Progress (1): 3.7/24 MB
+Progress (1): 3.8/24 MB
+Progress (1): 3.8/24 MB
+Progress (1): 3.8/24 MB
+Progress (1): 3.9/24 MB
+Progress (1): 3.9/24 MB
+Progress (1): 3.9/24 MB
+Progress (1): 4.0/24 MB
+Progress (1): 4.0/24 MB
+Progress (1): 4.0/24 MB
+Progress (1): 4.1/24 MB
+Progress (1): 4.1/24 MB
+Progress (1): 4.1/24 MB
+Progress (1): 4.2/24 MB
+Progress (1): 4.2/24 MB
+Progress (1): 4.2/24 MB
+Progress (1): 4.3/24 MB
+Progress (1): 4.3/24 MB
+Progress (1): 4.3/24 MB
+Progress (1): 4.4/24 MB
+Progress (1): 4.4/24 MB
+Progress (1): 4.4/24 MB
+Progress (1): 4.5/24 MB
+Progress (1): 4.5/24 MB
+Progress (1): 4.5/24 MB
+Progress (1): 4.6/24 MB
+Progress (1): 4.6/24 MB
+Progress (1): 4.6/24 MB
+Progress (1): 4.7/24 MB
+Progress (1): 4.7/24 MB
+Progress (1): 4.7/24 MB
+Progress (1): 4.8/24 MB
+Progress (1): 4.8/24 MB
+Progress (1): 4.8/24 MB
+Progress (1): 4.8/24 MB
+Progress (1): 4.9/24 MB
+Progress (1): 4.9/24 MB
+Progress (1): 4.9/24 MB
+Progress (1): 5.0/24 MB
+Progress (1): 5.0/24 MB
+Progress (1): 5.0/24 MB
+Progress (1): 5.1/24 MB
+Progress (1): 5.1/24 MB
+Progress (1): 5.1/24 MB
+Progress (1): 5.2/24 MB
+Progress (1): 5.2/24 MB
+Progress (1): 5.2/24 MB
+Progress (1): 5.3/24 MB
+Progress (1): 5.3/24 MB
+Progress (1): 5.3/24 MB
+Progress (1): 5.4/24 MB
+Progress (1): 5.4/24 MB
+Progress (1): 5.4/24 MB
+Progress (1): 5.5/24 MB
+Progress (1): 5.5/24 MB
+Progress (1): 5.5/24 MB
+Progress (1): 5.6/24 MB
+Progress (1): 5.6/24 MB
+Progress (1): 5.6/24 MB
+Progress (1): 5.7/24 MB
+Progress (1): 5.7/24 MB
+Progress (1): 5.7/24 MB
+Progress (1): 5.8/24 MB
+Progress (1): 5.8/24 MB
+Progress (1): 5.8/24 MB
+Progress (1): 5.9/24 MB
+Progress (1): 5.9/24 MB
+Progress (1): 5.9/24 MB
+Progress (1): 6.0/24 MB
+Progress (1): 6.0/24 MB
+Progress (1): 6.0/24 MB
+Progress (1): 6.1/24 MB
+Progress (1): 6.1/24 MB
+Progress (1): 6.1/24 MB
+Progress (1): 6.2/24 MB
+Progress (1): 6.2/24 MB
+Progress (1): 6.2/24 MB
+Progress (1): 6.3/24 MB
+Progress (1): 6.3/24 MB
+Progress (1): 6.3/24 MB
+Progress (1): 6.4/24 MB
+Progress (1): 6.4/24 MB
+Progress (1): 6.4/24 MB
+Progress (1): 6.5/24 MB
+Progress (1): 6.5/24 MB
+Progress (1): 6.5/24 MB
+Progress (1): 6.6/24 MB
+Progress (1): 6.6/24 MB
+Progress (1): 6.6/24 MB
+Progress (1): 6.7/24 MB
+Progress (1): 6.7/24 MB
+Progress (1): 6.7/24 MB
+Progress (1): 6.8/24 MB
+Progress (1): 6.8/24 MB
+Progress (1): 6.8/24 MB
+Progress (1): 6.8/24 MB
+Progress (1): 6.9/24 MB
+Progress (1): 6.9/24 MB
+Progress (1): 6.9/24 MB
+Progress (1): 7.0/24 MB
+Progress (1): 7.0/24 MB
+Progress (1): 7.0/24 MB
+Progress (1): 7.1/24 MB
+Progress (1): 7.1/24 MB
+Progress (1): 7.1/24 MB
+Progress (1): 7.2/24 MB
+Progress (1): 7.2/24 MB
+Progress (1): 7.2/24 MB
+Progress (1): 7.3/24 MB
+Progress (1): 7.3/24 MB
+Progress (1): 7.3/24 MB
+Progress (1): 7.4/24 MB
+Progress (1): 7.4/24 MB
+Progress (1): 7.4/24 MB
+Progress (1): 7.5/24 MB
+Progress (1): 7.5/24 MB
+Progress (1): 7.5/24 MB
+Progress (1): 7.6/24 MB
+Progress (1): 7.6/24 MB
+Progress (1): 7.6/24 MB
+Progress (1): 7.7/24 MB
+Progress (1): 7.7/24 MB
+Progress (1): 7.7/24 MB
+Progress (1): 7.8/24 MB
+Progress (1): 7.8/24 MB
+Progress (1): 7.8/24 MB
+Progress (1): 7.9/24 MB
+Progress (1): 7.9/24 MB
+Progress (1): 7.9/24 MB
+Progress (1): 8.0/24 MB
+Progress (1): 8.0/24 MB
+Progress (1): 8.0/24 MB
+Progress (1): 8.1/24 MB
+Progress (1): 8.1/24 MB
+Progress (1): 8.1/24 MB
+Progress (1): 8.2/24 MB
+Progress (1): 8.2/24 MB
+Progress (1): 8.2/24 MB
+Progress (1): 8.3/24 MB
+Progress (1): 8.3/24 MB
+Progress (1): 8.3/24 MB
+Progress (1): 8.4/24 MB
+Progress (1): 8.4/24 MB
+Progress (1): 8.4/24 MB
+Progress (1): 8.5/24 MB
+Progress (1): 8.5/24 MB
+Progress (1): 8.5/24 MB
+Progress (1): 8.6/24 MB
+Progress (1): 8.6/24 MB
+Progress (1): 8.6/24 MB
+Progress (1): 8.7/24 MB
+Progress (1): 8.7/24 MB
+Progress (1): 8.7/24 MB
+Progress (1): 8.7/24 MB
+Progress (1): 8.8/24 MB
+Progress (1): 8.8/24 MB
+Progress (1): 8.8/24 MB
+Progress (1): 8.9/24 MB
+Progress (1): 8.9/24 MB
+Progress (1): 8.9/24 MB
+Progress (1): 9.0/24 MB
+Progress (1): 9.0/24 MB
+Progress (1): 9.0/24 MB
+Progress (1): 9.1/24 MB
+Progress (1): 9.1/24 MB
+Progress (1): 9.1/24 MB
+Progress (1): 9.2/24 MB
+Progress (1): 9.2/24 MB
+Progress (1): 9.2/24 MB
+Progress (1): 9.3/24 MB
+Progress (1): 9.3/24 MB
+Progress (1): 9.3/24 MB
+Progress (1): 9.4/24 MB
+Progress (1): 9.4/24 MB
+Progress (1): 9.4/24 MB
+Progress (1): 9.5/24 MB
+Progress (1): 9.5/24 MB
+Progress (1): 9.5/24 MB
+Progress (1): 9.6/24 MB
+Progress (1): 9.6/24 MB
+Progress (1): 9.6/24 MB
+Progress (1): 9.7/24 MB
+Progress (1): 9.7/24 MB
+Progress (1): 9.7/24 MB
+Progress (1): 9.8/24 MB
+Progress (1): 9.8/24 MB
+Progress (1): 9.8/24 MB
+Progress (1): 9.9/24 MB
+Progress (1): 9.9/24 MB
+Progress (1): 9.9/24 MB
+Progress (1): 10.0/24 MB
+Progress (1): 10.0/24 MB
+Progress (1): 10/24 MB  
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 10/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 11/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 12/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 13/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 14/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 15/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 16/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 17/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 18/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 19/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 20/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 21/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 22/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 23/24 MB
+Progress (1): 24/24 MB
+Progress (1): 24/24 MB
+Progress (1): 24/24 MB
+Progress (1): 24/24 MB
+Progress (1): 24/24 MB
+Progress (1): 24 MB   
+                   
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.851 s
+[INFO] Finished at: 2025-11-17T02:47:00Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.4:deploy (default-deploy) on project demo: Failed to deploy artifacts: Could not transfer artifact com.example:demo:pom:0.0.1-20251117.024650-1 from/to nexus (http://172.17.0.3:8081/repository/maven-releases/): status code: 400, reason phrase: Repository version policy: RELEASE does not allow version: 0.0.1-20251117.024650-1 (400) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
