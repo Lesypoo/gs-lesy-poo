@@ -20,6 +20,10 @@ pipeline {
             steps {
                 sh 'mvn clean package'
             }
+        stage('Deploy to Nexus') {
+            steps {
+                withMaven(maven: 'maven3') {
+                    sh 'mvn deploy -DskipTests'
         }
     }
 
