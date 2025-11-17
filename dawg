@@ -1,74 +1,17 @@
-Started by user admin
+<settings>
+  <servers>
+    <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>10ad3d92-be51-4fcf-add7-f6bb71bc58a7</password>
+    </server>
+  </servers>
 
-Obtained Jenkinsfile from git https://github.com/Lesypoo/gs-lesy-poo.git
-[Pipeline] Start of Pipeline
-[Pipeline] node
-Running on Jenkins
- in /var/jenkins_home/workspace/lesy
-[Pipeline] {
-[Pipeline] stage
-[Pipeline] { (Declarative: Tool Install)
-[Pipeline] tool
-[Pipeline] envVarsForTool
-[Pipeline] }
-[Pipeline] // stage
-[Pipeline] withEnv
-[Pipeline] {
-[Pipeline] stage
-[Pipeline] { (Checkout)
-[Pipeline] tool
-[Pipeline] envVarsForTool
-[Pipeline] withEnv
-[Pipeline] {
-[Pipeline] git
-The recommended git tool is: NONE
-No credentials specified
- > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/lesy/.git # timeout=10
-Fetching changes from the remote Git repository
- > git config remote.origin.url https://github.com/lesypoo/gs-lesy-poo.git # timeout=10
-Fetching upstream changes from https://github.com/lesypoo/gs-lesy-poo.git
- > git --version # timeout=10
- > git --version # 'git version 2.47.3'
- > git fetch --tags --force --progress -- https://github.com/lesypoo/gs-lesy-poo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-Checking out Revision dea510a41d7d00fee43bb26dbcd12fa1c5b9f1c2 (refs/remotes/origin/main)
- > git config core.sparsecheckout # timeout=10
- > git checkout -f dea510a41d7d00fee43bb26dbcd12fa1c5b9f1c2 # timeout=10
- > git branch -a -v --no-abbrev # timeout=10
- > git branch -D main # timeout=10
- > git checkout -b main dea510a41d7d00fee43bb26dbcd12fa1c5b9f1c2 # timeout=10
-Commit message: "Update pom.xml"
- > git rev-list --no-walk 70e264d67e1fbdf69b96307645412b0e0b8f23d0 # timeout=10
-[Pipeline] }
-[Pipeline] // withEnv
-[Pipeline] }
-[Pipeline] // stage
-[Pipeline] stage
-[Pipeline] { (Build)
-[Pipeline] tool
-[Pipeline] envVarsForTool
-[Pipeline] withEnv
-[Pipeline] {
-[Pipeline] sh
-+ mvn clean package
-[ERROR] Error executing Maven.
-[ERROR] 1 problem was encountered while building the effective settings
-[FATAL] Non-parseable settings /var/jenkins_home/.m2/settings.xml: expected > to finsh end tag not < from line 6 (position: TEXT seen ...<password>10ad3d92-be51-4fcf-add7-f6bb71bc58a7</password\n\t<... @7:3)  @ /var/jenkins_home/.m2/settings.xml, line 7, column 3
-
-[Pipeline] }
-[Pipeline] // withEnv
-[Pipeline] }
-[Pipeline] // stage
-[Pipeline] stage
-[Pipeline] { (Deploy to Nexus)
-Stage "Deploy to Nexus" skipped due to earlier failure(s)
-[Pipeline] getContext
-[Pipeline] }
-[Pipeline] // stage
-[Pipeline] }
-[Pipeline] // withEnv
-[Pipeline] }
-[Pipeline] // node
-[Pipeline] End of Pipeline
-ERROR: script returned exit code 1
-Finished: FAILURE
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>http://172.17.0.3:8081/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+</settings>
