@@ -1,7 +1,2 @@
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  9.851 s
-[INFO] Finished at: 2025-11-17T02:47:00Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:3.1.4:deploy (default-deploy) on project demo: Failed to deploy artifacts: Could not transfer artifact com.example:demo:pom:0.0.1-20251117.024650-1 from/to nexus (http://172.17.0.3:8081/repository/maven-releases/): status code: 400, reason phrase: Repository version policy: RELEASE does not allow version: 0.0.1-20251117.024650-1 (400) -> [Help 1]
-[ERROR] 
+curl -LO "https://dl.k8s.io/release/$(curl -L -s \
+https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
