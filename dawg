@@ -1,4 +1,4 @@
-wafer7@SysOpLes:~$ kubectl get ingress
-NAME              CLASS    HOSTS   ADDRESS   PORTS   AGE
-example-ingress   <none>   *                 80      74s
-wafer7@SysOpLes:~$ sudo apt-get nginx
+wafer7@SysOpLes:~$ kubectl get pods -A | grep ingress
+ingress-nginx   ingress-nginx-admission-create-wrvcb        0/1     Completed   0             41m
+ingress-nginx   ingress-nginx-admission-patch-29m72         0/1     Completed   1             41m
+ingress-nginx   ingress-nginx-controller-7df9fc45fd-66tdt   1/1     Running     0             37m
