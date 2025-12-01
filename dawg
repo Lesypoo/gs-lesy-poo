@@ -1,17 +1,25 @@
-wafer7@SysOpLes:~$ curl http://192.168.49.2:30536/bar
-<html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
-wafer7@SysOpLes:~$ curl http://192.168.49.2:30536/foo
-<html>
-<head><title>404 Not Found</title></head>
-<body>
-<center><h1>404 Not Found</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
+wafer7@SysOpLes:~$ kubectl describe ingress example-ingress
+Name:             example-ingress
+Labels:           <none>
+Namespace:        default
+Address:          
+Ingress Class:    <none>
+Default backend:  <default>
+Rules:
+  Host        Path  Backends
+  ----        ----  --------
+  *           
+              /foo   foo-service:8080 (10.244.0.10:8080)
+              /bar   bar-service:8080 (10.244.0.11:8080)
+Annotations:  <none>
+Events:       <none>
+wafer7@SysOpLes:~$ kubectl get pods
+NAME      READY   STATUS    RESTARTS   AGE
+bar-app   1/1     Running   0          25m
+foo-app   1/1     Running   0          25m
+wafer7@SysOpLes:~$ kubectl get svc
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+bar-service   ClusterIP   10.98.58.235    <none>        8080/TCP   25m
+foo-service   ClusterIP   10.110.125.79   <none>        8080/TCP   25m
+kubernetes    ClusterIP   10.96.0.1       <none>        443/TCP    70m
 wafer7@SysOpLes:~$ 
