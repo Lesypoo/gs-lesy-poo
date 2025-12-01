@@ -1,7 +1,9 @@
-wafer7@SysOpLes:~$ kubectl expose deployment hello-world \
-> --type=Loadbalancer \
-> --name=my-service \
-> --port=8080
-The Service "my-service" is invalid: spec.type: Unsupported value: "Loadbalancer": supported values: "ClusterIP", "ExternalName", "LoadBalancer", "NodePort"
-wafer7@SysOpLes:~$ 
-
+NAME                               READY   STATUS    RESTARTS   AGE
+coredns-66bc5c9577-xs7n8           1/1     Running   0          4h38m
+etcd-minikube                      1/1     Running   0          4h39m
+kube-apiserver-minikube            1/1     Running   0          4h39m
+kube-controller-manager-minikube   1/1     Running   0          4h39m
+kube-proxy-48f58                   1/1     Running   0          4h38m
+kube-scheduler-minikube            1/1     Running   0          4h39m
+storage-provisioner                1/1     Running   0          4h38m
+wafer7@Sy
