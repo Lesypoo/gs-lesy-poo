@@ -1,5 +1,18 @@
-wafer7@SysOpLes:~$ kubectl get svc -n ingress-nginx
-NAME                                 TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE
-ingress-nginx-controller             LoadBalancer   10.103.25.61   <pending>     80:30536/TCP,443:31710/TCP   48m
-ingress-nginx-controller-admission   ClusterIP      10.109.79.79   <none>        443/TCP                      48m
+wafer7@SysOpLes:~$ curl http://$(minikube ip):30536/foo
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+wafer7@SysOpLes:~$ curl http://$(minikube ip):30536/bar
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
 wafer7@SysOpLes:~$ 
+
