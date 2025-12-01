@@ -1,4 +1,5 @@
-wafer7@SysOpLes:~$ kubectl get ingress
-NAME              CLASS    HOSTS   ADDRESS   PORTS   AGE
-example-ingress   <none>   *                 80      8m40s
+wafer7@SysOpLes:~$ kubectl get svc -n ingress-nginx
+NAME                                 TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE
+ingress-nginx-controller             LoadBalancer   10.103.25.61   <pending>     80:30536/TCP,443:31710/TCP   48m
+ingress-nginx-controller-admission   ClusterIP      10.109.79.79   <none>        443/TCP                      48m
 wafer7@SysOpLes:~$ 
