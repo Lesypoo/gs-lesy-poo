@@ -1,9 +1,8 @@
-NAME                               READY   STATUS    RESTARTS   AGE
-coredns-66bc5c9577-xs7n8           1/1     Running   0          4h38m
-etcd-minikube                      1/1     Running   0          4h39m
-kube-apiserver-minikube            1/1     Running   0          4h39m
-kube-controller-manager-minikube   1/1     Running   0          4h39m
-kube-proxy-48f58                   1/1     Running   0          4h38m
-kube-scheduler-minikube            1/1     Running   0          4h39m
-storage-provisioner                1/1     Running   0          4h38m
-wafer7@Sy
+NAME                               READY   STATUS    RESTARTS        AGE
+coredns-66bc5c9577-xs7n8           1/1     Running   2 (5m3s ago)    4h56m
+etcd-minikube                      1/1     Running   2 (5m2s ago)    4h56m
+kube-apiserver-minikube            1/1     Running   2 (4m57s ago)   4h56m
+kube-controller-manager-minikube   1/1     Running   3 (5m8s ago)    4h56m
+kube-proxy-48f58                   1/1     Running   2 (5m8s ago)    4h56m
+kube-scheduler-minikube            1/1     Running   2 (5m8s ago)    4h56m
+storage-provisioner                1/1     Running   4 (2m24s ago)   4h56m
