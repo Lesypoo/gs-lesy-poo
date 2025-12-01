@@ -1,2 +1,19 @@
-kubectl annotate ingress example-ingress kubernetes.io/ingress.class=nginx --overwrite
-kubectl describe ingress example-ingress
+wafer7@SysOpLes:~$ kubectl describe ingress example-ingress
+Name:             example-ingress
+Labels:           <none>
+Namespace:        default
+Address:          10.103.25.61
+Ingress Class:    nginx
+Default backend:  <default>
+Rules:
+  Host        Path  Backends
+  ----        ----  --------
+  *           
+              /foo   foo-service:8080 (10.244.0.10:8080)
+              /bar   bar-service:8080 (10.244.0.11:8080)
+Annotations:  kubernetes.io/ingress.class: nginx
+Events:
+  Type    Reason  Age               From                      Message
+  ----    ------  ----              ----                      -------
+  Normal  Sync    9s (x3 over 46s)  nginx-ingress-controller  Scheduled for sync
+wafer7@SysOpLes:~$ 
