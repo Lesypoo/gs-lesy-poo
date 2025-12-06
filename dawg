@@ -1,5 +1,3 @@
-FROM node:18
-WORKDIR /app
-COPY . .
-EXPOSE 3000
-CMD ["node", "app.js"]
+wafer7@SysOpLes:~/hw3app$ docker push pulleym1/hw3app:latest
+The push refers to repository [docker.io/pulleym1/hw3app]
+tag does not exist: pulleym1/hw3app:latest
