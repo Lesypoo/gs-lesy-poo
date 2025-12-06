@@ -1,14 +1,13 @@
-afer7@SysOpLes:~/les-node$ git commit -m "initial commit"
-Author identity unknown
+wafer7@SysOpLes:~/les-node$ git push -u origin main
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
 
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'wafer7@SysOpLes.(none)')
+Please make sure you have the correct access rights
+and the repository exists.
+wafer7@SysOpLes:~/les-node$ 
