@@ -1,11 +1,5 @@
 wafer7@SysOpLes:~/les-node$ git push -u origin main
-The authenticity of host 'github.com (140.82.113.3)' can't be established.
-ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
-This key is not known by any other names
-Are you sure you want to continue connecting (yes/no/[fingerprint])? y
-Please type 'yes', 'no' or the fingerprint: yes
-Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
-git@github.com: Permission denied (publickey).
+ERROR: Repository not found.
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
