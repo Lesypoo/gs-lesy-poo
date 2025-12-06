@@ -1,7 +1,7 @@
-wafer7@SysOpLes:~/les-node$ git push -u origin main
-ERROR: Repository not found.
+Failed to connect to repository : Command "git ls-remote -h -- git@github.cm:lesypoo/les-node.git HEAD" returned status code 128:
+stdout:
+stderr: ssh: connect to host github.cm port 22: Connection refused
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
-wafer7@SysOpLes:~/les-node$ 
