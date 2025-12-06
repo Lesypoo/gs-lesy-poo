@@ -1,3 +1,6 @@
-wafer7@SysOpLes:~/hw3app$ docker push pulleym1/hw3app:latest
-The push refers to repository [docker.io/pulleym1/hw3app]
-tag does not exist: pulleym1/hw3app:latest
+afer7@SysOpLes:~/les-node$ git remote add origin git@github.com:lesypoo/les-node.git
+wafer7@SysOpLes:~/les-node$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:lesypoo/les-node.git'
+wafer7@SysOpLes:~/les-node$ ^C
+wafer7@SysOpLes:~/les-node$ 
