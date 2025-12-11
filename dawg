@@ -1,15 +1,7 @@
-Initialized empty Git repository in /home/wafer7/sys_final/.git/
-wafer7@SysOpLes:~/sys_final$ git branch -M main
-wafer7@SysOpLes:~/sys_final$ git remote add origin git@github.com:Lesypoo/sys-final.
-wafer7@SysOpLes:~/sys_final$ git push -u origin main
-error: src refspec main does not match any
-error: failed to push some refs to 'github.com:Lesypoo/sys-final.'
-wafer7@SysOpLes:~/sys_final$ git remote add origin git@github.com:Lesypoo/sys-final
-error: remote origin already exists.
-wafer7@SysOpLes:~/sys_final$ git push -u origin main
-error: src refspec main does not match any
-error: failed to push some refs to 'github.com:Lesypoo/sys-final.'
-wafer7@SysOpLes:~/sys_final$ git remote add origin git@github.com:Lesypoo/sys-final
-error: remote origin already exists.
-wafer7@SysOpLes:~/sys_final$ ^C
-wafer7@SysOpLes:~/sys_final$ 
+@RestController
+public class HelloController {
+    @GetMapping("/")
+    public String hello() {
+        return "Hello from K8s!";
+    }
+}
