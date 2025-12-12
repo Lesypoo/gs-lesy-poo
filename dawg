@@ -1,9 +1,6 @@
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ minikube service webapp
-┌───────────┬────────┬─────────────┬───────────────────────────┐
-│ NAMESPACE │  NAME  │ TARGET PORT │            URL            │
-├───────────┼────────┼─────────────┼───────────────────────────┤
-│ default   │ webapp │ 8080        │ http://192.168.49.2:30000 │
-└───────────┴────────┴─────────────┴───────────────────────────┘
-🎉  Opening service default/webapp in default browser...
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ Gtk-Message: 14:37:58.971: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
-
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ kubectl get pods
+NAME                       READY   STATUS    RESTARTS       AGE
+jenkins-688cf95b47-prx7p   1/1     Running   1 (4m2s ago)   41m
+mysql-9c9fdb7c6-2nnm4      1/1     Running   1 (4m1s ago)   41m
+nexus-7d58cb9946-pfz6f     1/1     Running   1 (4m3s ago)   41m
+webapp-859495777d-9x2g7    1/1     Running   8 (76s ago)    15m
