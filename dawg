@@ -1,9 +1,41 @@
-FROM eclipse-temurin:17-jdk-alpine
+wafer7@SysOpLes:~/sys_final/final-dev/demo$ eval $(minikube docker-env)
+wafer7@SysOpLes:~/sys_final/final-dev/demo$ docker build -t webapp:latest .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
 
-WORKDIR /app
-
-COPY target/*.jar app.jar
-
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
+Sending build context to Docker daemon  50.18kB
+Step 1/5 : FROM eclipse-temurin:17-jdk-alpine
+17-jdk-alpine: Pulling from library/eclipse-temurin
+2d35ebdb57d9: Pulling fs layer
+2da2b7fa39d9: Pulling fs layer
+ecc9308f1b3f: Pulling fs layer
+b3851e26ddd2: Pulling fs layer
+f03fcaf37379: Pulling fs layer
+b3851e26ddd2: Waiting
+f03fcaf37379: Waiting
+2d35ebdb57d9: Verifying Checksum
+2d35ebdb57d9: Download complete
+b3851e26ddd2: Verifying Checksum
+b3851e26ddd2: Download complete
+f03fcaf37379: Verifying Checksum
+f03fcaf37379: Download complete
+2d35ebdb57d9: Pull complete
+2da2b7fa39d9: Verifying Checksum
+2da2b7fa39d9: Download complete
+2da2b7fa39d9: Pull complete
+ecc9308f1b3f: Verifying Checksum
+ecc9308f1b3f: Download complete
+ecc9308f1b3f: Pull complete
+b3851e26ddd2: Pull complete
+f03fcaf37379: Pull complete
+Digest: sha256:eaf56b7430cee6c93871106367715e2675192093d8f67dbbdbe07136f7cfae60
+Status: Downloaded newer image for eclipse-temurin:17-jdk-alpine
+ ---> 1d00d209bc23
+Step 2/5 : WORKDIR /app
+ ---> Running in dd7a64fee01e
+ ---> Removed intermediate container dd7a64fee01e
+ ---> 8ab67da1449d
+Step 3/5 : COPY target/*.jar app.jar
+COPY failed: no source files were specified
+wafer7@SysOpLes:~/sys_final/final-dev/demo$ 
