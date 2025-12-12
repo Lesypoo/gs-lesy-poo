@@ -1,5 +1,28 @@
-wafer7@SysOpLes:~/sys_final/final-dev/k8s$ git add .
-error: open("final-dev/k8s/.deploy.sh.swp"): Permission denied
-error: unable to index file 'final-dev/k8s/.deploy.sh.swp'
-fatal: adding files failed
-wafer7@SysOpLes:~/sys_final/final-dev/k8s$ 
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/<yourname>/<repo>.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+
+        stage('Upload to Nexus') {
+            steps {
+                sh """
+                curl -v -F r=maven-releases \
+                   -F hasPom=true \
+                   -F file=@target/*.jar \
+                   http://nexus:8081/repository/maven-releases/
+                """
+            }
+        }
+    }
+}
