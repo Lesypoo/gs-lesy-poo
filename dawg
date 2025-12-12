@@ -1,10 +1,14 @@
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ kubectl get pods
-NAME                       READY   STATUS             RESTARTS   AGE
-jenkins-688cf95b47-prx7p   1/1     Running            0          3m39s
-mysql-9c9fdb7c6-2nnm4      1/1     Running            0          3m39s
-nexus-7d58cb9946-pfz6f     1/1     Running            0          3m38s
-webapp-7c4444fb94-qhkl4    0/1     InvalidImageName   0          3m37s
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ kubectl get pvc
-NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
-pvc-data   Bound    pvc-1dd759f4-10e0-4e59-b28d-f08061340111   1Gi        RWO            standard       <unset>                 4m14s
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ 
+--------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  47.143 s
+[INFO] Finished at: 2025-12-12T14:23:39-05:00
+[INFO] ------------------------------------------------------------------------
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev/demo$ docker build -t webapp:lastest .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/wafer7/final-app/sys-final/final-dev/demo/Dockerfile: no such file or directory
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev/demo$ 
+
