@@ -1,6 +1,13 @@
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ kubectl get pods
-NAME                       READY   STATUS    RESTARTS       AGE
-jenkins-688cf95b47-prx7p   1/1     Running   1 (4m2s ago)   41m
-mysql-9c9fdb7c6-2nnm4      1/1     Running   1 (4m1s ago)   41m
-nexus-7d58cb9946-pfz6f     1/1     Running   1 (4m3s ago)   41m
-webapp-859495777d-9x2g7    1/1     Running   8 (76s ago)    15m
+2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 final-dev/demo/Dockerfile
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git push origin main
+Username for 'https://github.com': lesypoo
+Password for 'https://lesypoo@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/lesypoo/sys-final.git/'
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git login
+git: 'login' is not a git command. See 'git --help'.
+
+The most similar command is
+	column
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ 
