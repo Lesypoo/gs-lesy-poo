@@ -1,9 +1,13 @@
-FROM eclipse-temurin:17-jdk-alpine
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ kubectl get pods
+NAME                       READY   STATUS    RESTARTS     AGE
+jenkins-688cf95b47-prx7p   1/1     Running   0            26m
+mysql-9c9fdb7c6-2nnm4      1/1     Running   0            26m
+nexus-7d58cb9946-pfz6f     1/1     Running   0            26m
+webapp-859495777d-9x2g7    1/1     Running   1 (4s ago)   30s
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ minikube service webapp
 
-WORKDIR /app
+❌  Exiting due to SVC_NOT_FOUND: Service 'webapp' was not found in 'default' namespace.
+You may select another namespace by using 'minikube service webapp -n <namespace>'. Or list out all the services using 'minikube service list'
 
-COPY target/*.jar app.jar
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev/k8s$ 
 
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
