@@ -1,31 +1,26 @@
-wafer7@SysOpLes:~/sys_final/final-dev/demo$ mvn clean package
-[INFO] Scanning for projects...
 [INFO] 
-[INFO] --------------------------< com.example:demo >--------------------------
-[INFO] Building final-dev 0.0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Results:
 [INFO] 
-[INFO] --- maven-clean-plugin:3.5.0:clean (default-clean) @ demo ---
-[INFO] Deleting /home/wafer7/sys_final/final-dev/demo/target
+[ERROR] Errors: 
+[ERROR]   FinalDevApplicationTests.contextLoads » IllegalState Failed to load ApplicationContext for [WebMergedContextConfiguration@78bd02c8 testClass = com.example.demo.FinalDevApplicationTests, locations = [], classes = [com.example.demo.FinalDevApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.PropertyMappingContextCustomizer@0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@45c8d09f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@a8e6492, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@7b324585, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.webmvc.test.autoconfigure.WebDriverContextCustomizer@19fb8826, org.springframework.boot.web.server.context.SpringBootTestRandomPortContextCustomizerFactory$Customizer@62ea3440, org.springframework.boot.test.context.SpringBootTestAnnotation@87d5dd68], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
 [INFO] 
-[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ demo ---
-[INFO] Copying 1 resource from src/main/resources to target/classes
-[INFO] Copying 0 resource from src/main/resources to target/classes
+[ERROR] Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.14.1:compile (default-compile) @ demo ---
-[INFO] Recompiling the module because of changed source code.
-[INFO] Compiling 1 source file with javac [debug parameters release 17] to target/classes
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.867 s
-[INFO] Finished at: 2025-12-11T20:32:33-05:00
+[INFO] Total time:  10.194 s
+[INFO] Finished at: 2025-12-11T20:40:42-05:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project demo: Fatal error compiling: error: release version 17 not supported -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project demo: 
+[ERROR] 
+[ERROR] See /home/wafer7/sys_final/final-dev/demo/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
 [ERROR] 
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 wafer7@SysOpLes:~/sys_final/final-dev/demo$ 
