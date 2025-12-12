@@ -1,14 +1,9 @@
---------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  47.143 s
-[INFO] Finished at: 2025-12-12T14:23:39-05:00
-[INFO] ------------------------------------------------------------------------
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/demo$ docker build -t webapp:lastest .
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
+FROM eclipse-temurin:17-jdk-alpine
 
-unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/wafer7/final-app/sys-final/final-dev/demo/Dockerfile: no such file or directory
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev/demo$ 
+WORKDIR /app
 
+COPY target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
