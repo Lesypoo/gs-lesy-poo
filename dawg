@@ -1,28 +1,19 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/<yourname>/<repo>.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh "mvn clean package"
-            }
-        }
-
-        stage('Upload to Nexus') {
-            steps {
-                sh """
-                curl -v -F r=maven-releases \
-                   -F hasPom=true \
-                   -F file=@target/*.jar \
-                   http://nexus:8081/repository/maven-releases/
-                """
-            }
-        }
-    }
-}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: <yourdockerhub>/springboot-webapp:latest
+        ports:
+        - containerPort: 8080
