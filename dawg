@@ -1,6 +1,9 @@
-wafer7@SysOpLes:~/sys_final/final-dev/demo$ docker build -t pulleym1/spring-app:latest .
-DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
-            Install the buildx component to build images with BuildKit:
-            https://docs.docker.com/go/buildx/
+FROM eclipse-temurin:17-jdk-alpine
 
-unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/wafer7/sys_final/final-dev/demo/Dockerfile: no such file or directory
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
