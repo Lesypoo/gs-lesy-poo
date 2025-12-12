@@ -1,16 +1,5 @@
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ ls ~/.ssssh
-ls: cannot access '/home/wafer7/.ssssh': No such file or directory
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ ls ~/.ssh
-id_ed25519  id_ed25519.pub
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ cat ~/.ssh/id_ed25519.pub
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSEGZ4wnsDxjIPI8n8PqX8th6iUjal24m4UxA5+ZQ5N myles.pulley@gmail.com
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git remote -v
-origin	https://github.com/lesypoo/sys-final.git (fetch)
-origin	https://github.com/lesypoo/sys-final.git (push)
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git remote remove origin
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git remote add origin git@gihub.com:lesypoo/sys-final.git
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git push -u origin main
-ssh: connect to host gihub.com port 22: Connection refused
+wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git push -orgin main
+fatal: 'main' does not appear to be a git repository
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
