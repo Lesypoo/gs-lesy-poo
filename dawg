@@ -1,28 +1,68 @@
-pipeline {
-    agent any
+wafer7@SysOpLes:~/sys_final/final-dev/k8s$ ./deploy.sh
+Starting minikube...
+😄  minikube v1.37.0 on Ubuntu 22.04 (vbox/amd64)
+✨  Using the docker driver based on existing profile
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.48 ...
+🔄  Restarting existing docker container for "minikube" ...
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/<yourname>/<repo>.git'
-            }
-        }
+🧯  Docker is nearly out of disk space, which may cause deployments to fail! (96% of capacity). You can pass '--force' to skip this check.
+💡  Suggestion: 
 
-        stage('Build') {
-            steps {
-                sh "mvn clean package"
-            }
-        }
+    Try one or more of the following to free up space on the device:
+    
+    1. Run "docker system prune" to remove unused Docker data (optionally with "-a")
+    2. Increase the storage allocated to Docker for Desktop by clicking on:
+    Docker icon > Preferences > Resources > Disk Image Size
+    3. Run "minikube ssh -- docker system prune" if using the Docker container runtime
+🍿  Related issue: https://github.com/kubernetes/minikube/issues/9024
 
-        stage('Upload to Nexus') {
-            steps {
-                sh """
-                curl -v -F r=maven-releases \
-                   -F hasPom=true \
-                   -F file=@target/*.jar \
-                   http://nexus:8081/repository/maven-releases/
-                """
-            }
-        }
-    }
-}
+🐳  Preparing Kubernetes v1.34.0 on Docker 28.4.0 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.2
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.2
+    ▪ Using image registry.k8s.io/ingress-nginx/controller:v1.13.2
+🔎  Verifying ingress addon...
+🌟  Enabled addons: ingress, storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+Applying ConfigMaps...
+configmap/mysql-config unchanged
+Applying PV & PVC...
+persistentvolume/pv-data unchanged
+persistentvolumeclaim/pvc-data unchanged
+Deploying MySQL...
+deployment.apps/mysql unchanged
+Deploying Jenkins...
+deployment.apps/jenkins unchanged
+Deploying Nexus...
+deployment.apps/nexus unchanged
+Deploying Webapp...
+deployment.apps/webapp unchanged
+Listing all resources...
+NAME                       READY   STATUS              RESTARTS      AGE
+bar-app                    0/1     Error               2             10d
+foo-app                    1/1     Running             3 (33m ago)   10d
+jenkins-688cf95b47-gtglw   1/1     Running             1 (33m ago)   36m
+mysql-9c9fdb7c6-wtr76      1/1     Running             1 (33m ago)   36m
+nexus-7d58cb9946-q9hzc     0/1     ContainerCreating   0             36m
+webapp-7c4444fb94-wnq7c    0/1     InvalidImageName    0             36m
+NAME          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+bar-service   ClusterIP   10.98.58.235    <none>        8080/TCP   10d
+foo-service   ClusterIP   10.110.125.79   <none>        8080/TCP   10d
+kubernetes    ClusterIP   10.96.0.1       <none>        443/TCP    10d
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+jenkins   1/1     1            1           36m
+mysql     1/1     1            1           36m
+nexus     0/1     1            0           36m
+webapp    0/1     1            0           36m
+NAME               DATA   AGE
+kube-root-ca.crt   1      10d
+mysql-config       3      36m
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM              STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+pv-data                                    1Gi        RWO            Retain           Available                                     <unset>                          36m
+pvc-bb82b1e8-08a7-4caa-922d-5da8f62efae2   1Gi        RWO            Delete           Bound       default/pvc-data   standard       <unset>                          35m
+NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+pvc-data   Bound    pvc-bb82b1e8-08a7-4caa-922d-5da8f62efae2   1Gi        RWO            standard       <unset>                 36m
+Done!
+wafer7@SysOpLes:~/sys_final/final-dev/k8s$ 
