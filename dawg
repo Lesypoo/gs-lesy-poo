@@ -1,23 +1,9 @@
-Started by user les
-Running as SYSTEM
-Building in workspace /var/jenkins_home/workspace/nodejs-github-build
-The recommended git tool is: NONE
-No credentials specified
- > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/nodejs-github-build/.git # timeout=10
-Fetching changes from the remote Git repository
- > git config remote.origin.url https://github.com/lesypoo/jenkins-node-demo # timeout=10
-Fetching upstream changes from https://github.com/lesypoo/jenkins-node-demo
- > git --version # timeout=10
- > git --version # 'git version 2.47.3'
- > git fetch --tags --force --progress -- https://github.com/lesypoo/jenkins-node-demo +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-Checking out Revision d97cc3af13e3a5b2f59ac3b01df0d6159298c702 (refs/remotes/origin/main)
- > git config core.sparsecheckout # timeout=10
- > git checkout -f d97cc3af13e3a5b2f59ac3b01df0d6159298c702 # timeout=10
-Commit message: "Initial commit"
- > git rev-list --no-walk d97cc3af13e3a5b2f59ac3b01df0d6159298c702 # timeout=10
-[nodejs-github-build] $ /bin/sh -xe /tmp/jenkins10182381379495674765.sh
-+ npm install
-/tmp/jenkins10182381379495674765.sh: 2: npm: not found
-Build step 'Execute shell' marked build as failure
-Finished: FAILURE
+wafer7@SysOpFinal:~/jenkins-node-demo$ docker exec -it jenkins bash
+jenkins@44759358fce1:/$ spt update
+bash: spt: command not found
+jenkins@44759358fce1:/$ apt update
+Error: List directory /var/lib/apt/lists/partial is missing. - Acquire (13: Permission denied)
+jenkins@44759358fce1:/$ apt install -y node.js npm
+Error: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+Error: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+jenkins@44759358fce1:/$ 
