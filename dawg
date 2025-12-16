@@ -1,9 +1,9 @@
-wafer7@SysOpFinal:~/jenkins-node-demo$ docker exec -it jenkins bash
-jenkins@44759358fce1:/$ spt update
-bash: spt: command not found
-jenkins@44759358fce1:/$ apt update
-Error: List directory /var/lib/apt/lists/partial is missing. - Acquire (13: Permission denied)
-jenkins@44759358fce1:/$ apt install -y node.js npm
-Error: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
-Error: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
-jenkins@44759358fce1:/$ 
+root@44759358fce1:/# node -v
+bash: node: command not found
+root@44759358fce1:/# npm -v
+bash: npm: command not found
+root@44759358fce1:/# apt install -y nodejs npm
+Error: Unable to locate package nodejs
+Error: Unable to locate package npm
+root@44759358fce1:/# ^C
+root@44759358fce1:/# 
