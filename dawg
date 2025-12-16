@@ -1,3 +1,19 @@
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-/etc/apt/sources.list.d/jenkins.list > /dev/null
+wafer7@SysOpFinal:~$ sudo systemctl status jenkins
+× jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Tue 2025-12-16 14:05:16 EST; 11s ago
+    Process: 23760 ExecStart=/usr/bin/jenkins (code=exited, status=1/FAILURE)
+   Main PID: 23760 (code=exited, status=1/FAILURE)
+        CPU: 2.330s
+
+Dec 16 14:05:15 SysOpFinal systemd[1]: jenkins.service: Consumed 2.330s CPU time.
+Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
+Dec 16 14:05:16 SysOpFinal systemd[1]: Stopped Jenkins Continuous Integration Server.
+Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Consumed 2.330s CPU time.
+Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Start request repeated too quickly.
+Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Failed with result 'exit-code'.
+Dec 16 14:05:16 SysOpFinal systemd[1]: Failed to start Jenkins Continuous Integration Server.
+wafer7@SysOpFinal:~$ sudo systemctl start jenkins
+Job for jenkins.service failed because the control process exited with error code.
+See "systemctl status jenkins.service" and "journalctl -xeu jenkins.service" for details.
+wafer7@SysOpFinal:~$ 
