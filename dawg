@@ -1,19 +1,40 @@
-wafer7@SysOpFinal:~$ sudo systemctl status jenkins
-× jenkins.service - Jenkins Continuous Integration Server
-     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
-     Active: failed (Result: exit-code) since Tue 2025-12-16 14:05:16 EST; 11s ago
-    Process: 23760 ExecStart=/usr/bin/jenkins (code=exited, status=1/FAILURE)
-   Main PID: 23760 (code=exited, status=1/FAILURE)
-        CPU: 2.330s
-
-Dec 16 14:05:15 SysOpFinal systemd[1]: jenkins.service: Consumed 2.330s CPU time.
-Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
-Dec 16 14:05:16 SysOpFinal systemd[1]: Stopped Jenkins Continuous Integration Server.
-Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Consumed 2.330s CPU time.
-Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Start request repeated too quickly.
-Dec 16 14:05:16 SysOpFinal systemd[1]: jenkins.service: Failed with result 'exit-code'.
-Dec 16 14:05:16 SysOpFinal systemd[1]: Failed to start Jenkins Continuous Integration Server.
-wafer7@SysOpFinal:~$ sudo systemctl start jenkins
-Job for jenkins.service failed because the control process exited with error code.
-See "systemctl status jenkins.service" and "journalctl -xeu jenkins.service" for details.
-wafer7@SysOpFinal:~$ 
+@SysOpFinal:~$ sudo journalctl -xeu jenkins.service
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ The unit jenkins.service completed and consumed the indicated resources.
+Dec 16 14:14:22 SysOpFinal systemd[1]: jenkins.service: Scheduled restart job, restart counter is at 5.
+░░ Subject: Automatic restarting of a unit has been scheduled
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ Automatic restarting of the unit jenkins.service has been scheduled, as the result for
+░░ the configured Restart= setting for the unit.
+Dec 16 14:14:22 SysOpFinal systemd[1]: Stopped Jenkins Continuous Integration Server.
+░░ Subject: A stop job for unit jenkins.service has finished
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ A stop job for unit jenkins.service has finished.
+░░ 
+░░ The job identifier is 5142 and the job result is done.
+Dec 16 14:14:22 SysOpFinal systemd[1]: jenkins.service: Consumed 2.123s CPU time.
+░░ Subject: Resources consumed by unit runtime
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ The unit jenkins.service completed and consumed the indicated resources.
+Dec 16 14:14:22 SysOpFinal systemd[1]: jenkins.service: Start request repeated too quickly.
+Dec 16 14:14:22 SysOpFinal systemd[1]: jenkins.service: Failed with result 'exit-code'.
+░░ Subject: Unit failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ The unit jenkins.service has entered the 'failed' state with result 'exit-code'.
+Dec 16 14:14:22 SysOpFinal systemd[1]: Failed to start Jenkins Continuous Integration Server.
+░░ Subject: A start job for unit jenkins.service has failed
+░░ Defined-By: systemd
+░░ Support: http://www.ubuntu.com/support
+░░ 
+░░ A start job for unit jenkins.service has finished with a failure.
+░░ 
+░░ The job identifier is 5142 and the job result is failed.
