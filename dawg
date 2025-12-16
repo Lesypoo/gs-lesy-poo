@@ -1,38 +1,12 @@
-wafer7@SysOpFinal:~/hw5-springboot$ mvn clean package
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ---------------------< com.example:hw5-springboot >---------------------
-[INFO] Building hw5-springboot 0.0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-clean-plugin:3.5.0:clean (default-clean) @ hw5-springboot ---
-[INFO] 
-[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ hw5-springboot ---
-[INFO] Copying 1 resource from src/main/resources to target/classes
-[INFO] Copying 0 resource from src/main/resources to target/classes
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.14.1:compile (default-compile) @ hw5-springboot ---
-[INFO] Recompiling the module because of changed source code.
-[INFO] Compiling 2 source files with javac [debug parameters release 17] to target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/wafer7/hw5-springboot/src/main/java/com/example/hw5/hw5SpringbootApplication.java:[7,8] class HelloController is public, should be declared in a file named HelloController.java
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.628 s
-[INFO] Finished at: 2025-12-16T15:24:14-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project hw5-springboot: Compilation failure
-[ERROR] /home/wafer7/hw5-springboot/src/main/java/com/example/hw5/hw5SpringbootApplication.java:[7,8] class HelloController is public, should be declared in a file named HelloController.java
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+package com.example.hw5;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Hw5SpringbootApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Hw5SpringbootApplication.class, args);
+    }
+}
