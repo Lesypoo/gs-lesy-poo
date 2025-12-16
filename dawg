@@ -1,9 +1,10 @@
-Host github-work
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_work
+afer7@SysOpFinal:~$ sudo apt install jenkins -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package jenkins is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
 
-Host github-personal
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_personal
+E: Package 'jenkins' has no installation candidate
+wafer7@SysOpFinal:~$ 
