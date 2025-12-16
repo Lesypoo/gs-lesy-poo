@@ -1,4 +1,6 @@
-wafer7@SysOpFinal:~$ java -version
-openjdk version "17.0.17" 2025-10-21
-OpenJDK Runtime Environment (build 17.0.17+10-Ubuntu-122.04)
-OpenJDK 64-Bit Server VM (build 17.0.17+10-Ubuntu-122.04, mixed mode, sharing)
+wafer7@SysOpFinal:~$ cd /var/lib/jenkins/
+wafer7@SysOpFinal:/var/lib/jenkins$ ls
+config.xml                     jenkins.telemetry.Correlator.xml  nodeMonitors.xml  secret.key                secrets  userContent
+hudson.model.UpdateCenter.xml  jobs                              plugins           secret.key.not-so-secret  updates  users
+wafer7@SysOpFinal:/var/lib/jenkins$ cd secrets
+bash: cd: secrets: Permission denied
