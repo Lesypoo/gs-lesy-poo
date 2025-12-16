@@ -1,6 +1,23 @@
-wafer7@SysOpFinal:~/final-app/sys-final/final-dev$ git push -orgin main
-fatal: 'main' does not appear to be a git repository
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
+Started by user les
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/nodejs-github-build
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/nodejs-github-build/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/lesypoo/jenkins-node-demo # timeout=10
+Fetching upstream changes from https://github.com/lesypoo/jenkins-node-demo
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/lesypoo/jenkins-node-demo +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision d97cc3af13e3a5b2f59ac3b01df0d6159298c702 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f d97cc3af13e3a5b2f59ac3b01df0d6159298c702 # timeout=10
+Commit message: "Initial commit"
+ > git rev-list --no-walk d97cc3af13e3a5b2f59ac3b01df0d6159298c702 # timeout=10
+[nodejs-github-build] $ /bin/sh -xe /tmp/jenkins10182381379495674765.sh
++ npm install
+/tmp/jenkins10182381379495674765.sh: 2: npm: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
