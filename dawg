@@ -1,6 +1,13 @@
-wafer7@SysOpFinal:~$ cd /var/lib/jenkins/
-wafer7@SysOpFinal:/var/lib/jenkins$ ls
-config.xml                     jenkins.telemetry.Correlator.xml  nodeMonitors.xml  secret.key                secrets  userContent
-hudson.model.UpdateCenter.xml  jobs                              plugins           secret.key.not-so-secret  updates  users
-wafer7@SysOpFinal:/var/lib/jenkins$ cd secrets
-bash: cd: secrets: Permission denied
+package com.example.hw5;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+
+    @GetMapping("/")
+    public String hello() {
+        return "Hello from Spring Boot HW5!";
+    }
+}
