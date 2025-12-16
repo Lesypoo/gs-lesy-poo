@@ -1,12 +1,13 @@
 package com.example.hw5;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class Hw5SpringbootApplication {
+@RestController
+public class HelloController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Hw5SpringbootApplication.class, args);
+    @GetMapping("/")
+    public String hello() {
+        return "Hello from Spring Boot HW5!";
     }
 }
