@@ -1,9 +1,9 @@
-root@44759358fce1:/# node -v
-bash: node: command not found
-root@44759358fce1:/# npm -v
-bash: npm: command not found
-root@44759358fce1:/# apt install -y nodejs npm
-Error: Unable to locate package nodejs
-Error: Unable to locate package npm
-root@44759358fce1:/# ^C
-root@44759358fce1:/# 
+Host github-work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_work
+
+Host github-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal
