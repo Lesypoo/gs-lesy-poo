@@ -1,30 +1,26 @@
-Started by user les
-
-Obtained Jenkinsfile from git git@github.com:Lesypoo/hw5-springboot.git
-org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
-WorkflowScript: 5: Tool type "maven" does not have an install of "Maven" configured - did you mean "null"? @ line 5, column 15.
-           maven 'Maven'
-                 ^
-
-WorkflowScript: 6: Tool type "jdk" does not have an install of "JDK17" configured - did you mean "null"? @ line 6, column 13.
-           jdk 'JDK17'
-               ^
-
-2 errors
-
-	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
-	at org.codehaus.groovy.control.CompilationUnit.applyToPrimaryClassNodes(CompilationUnit.java:1107)
-	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:624)
-	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:602)
-	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:579)
-	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:323)
-	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:293)
-	at PluginClassLoader for script-security//org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.GroovySandbox$Scope.parse(GroovySandbox.java:162)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.doParse(CpsGroovyShell.java:202)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsGroovyShell.reparse(CpsGroovyShell.java:186)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.parseScript(CpsFlowExecution.java:669)
-	at PluginClassLoader for workflow-cps//org.jenkinsci.plugins.workflow.cps.CpsFlowExecution.start(CpsFlowExecution.java:615)
-	at PluginClassLoader for workflow-job//org.jenkinsci.plugins.workflow.job.WorkflowRun.run(WorkflowRun.java:341)
-	at hudson.model.ResourceController.execute(ResourceController.java:101)
-	at hudson.model.Executor.run(Executor.java:460)
-Finished: FAILURE
+PK��2„[������������	��META-INF/þÊ���PK�����������PK��2„[���������������META-INF/MANIFEST.MFmŽËnÂ0E÷‘òþOBª”Aª�ñRƒºŸÄC°pìÈ1Møû:A¥ºÝ¹sæ¬QË5Ž’m¤Ñ	A3KèHðô’°5~‘fËéÛ©s)5{…1¼„Az–Jð¥8ñ¬¦Â¾…Á¢ªU¤:ã{é%ìØNxS[©ËÜ÷Ôº½Ž!†Ï6Ó]6ßîÃ`Ró™Â¦I˜±%\‹µÆž §2(È‚Â³.Ž°D»&²a9´îP˜
+¨Ãþ5x!˜·“ìæ4­k%‹AÇŸ
+1O}þë6önñýn�“G§Ûíž/6ïQqM¢ûÞJæ:JæÑ?œÝ‘/´ î‘×o@ŠîŠ¯öt¡†øZƒoPK=±b¸��Þ��PK����A����������������META-INF/services/�PK�����������PK����A�������������6���META-INF/services/java.nio.file.spi.FileSystemProviderË/J×+.(ÊÌKO+JÌM-Ï/ÊÖKÊÏ/ÑËÉOLI-ÒËËÌ×KËÌIÕóK-.IMq2ƒ+¬Ü€¢ü²L 
+.�PKs£z½@���B���PK����A����������������org/�PK�����������PK����A����������������org/springframework/�PK�����������PK����A����������������org/springframework/boot/�PK�����������PK����A������������� ���org/springframework/boot/loader/�PK�����������PK����A�������������$���org/springframework/boot/loader/jar/�PK�����������PK����A�������������N���org/springframework/boot/loader/jar/JarEntriesStream$InputStreamSupplier.classP±NÃ0=—’”R !ÄÄÂ�^ØB­ZTQ‰HìN¸F.ŽàÛø�>
+q	RAˆ	÷îÞ»;ŸÞûÇë�\BCGÀÄQ!}EÚR%>;z”™sA§äR‘¼Q4²4ú4ªòxj«:|åi]UF#ÅÐ0\ª'%²…œgKÌƒ€µ9œœÎZM;ùcøB@ô’c´³>†
+Éªm¾R¸+u5å8Öìÿ¾ç¬™pxWÛ K¼×^g¯¬uAµ›Í¾O×6ohe¦6 -TŽ|Hï}˜8b
+8ÿ/Sk‘®òù×ä£"�vš'Ø²uˆ¸Ž¹ê2ö8ö9ïÀ&m‹q»åv`—±Ïœà|/ê}PK—h­W��Í��PK����A�������������:���org/springframework/boot/loader/jar/JarEntriesStream.class­VûS×=	­krüMŒš†Xˆ`5Ž“:`'1X$²1Æ–
+Lœ,b…E+¯VÁvßïGú~»»¯”6uÛx¦mÝ6?vÚŸûÏt&S÷Ü»+w:3#îÝûúÎwÎ÷}÷þó?þ€¸CBÂ:šh_0^72¶QšËœ›^0‹ž@ä¸U²¼çB©žq
+Q£Ž;—©”]«47ëKæ²ã.f¦ÇËØŽ1cº™ÃÍœ6ÜlÉs-³’÷\ÓXj†˜ŽVèQ«4X5]¦©A9³SG›œÙQt–Ê†kúÓ:ö(HUÏ²3×­r&Wšµ
+ÏtchÇ.‰úpj²g\³GÇ^ìSüUûF¶ß? a¿@çúd�:W*W=r	tJò˜”ŽådVøf»t$ñ>:c•Žü¯3ä¡ï×ñ8ºÚæLoÔ¼ê\]ØŸêÙº]Í
+HC‡t¤Ð#ÐlúË÷=h±d§WÇ“RÓf×¬˜^‡‘ÑðOáÈV7
+´Z•S–KåùEÍ'£8*Ð2SŒÇ³:>ˆc$~Ö°lÝ9*nè'ƒÌH‹ý:pœÛééYÓ›wfÔ™¹(Pq)6ÁU,§”\R³’uœ”¸cEÛ©˜
+–†!½uNž±A&
+YÃxI`'í4L	L§r#ï%\o8%_-—m‹!Ó³mÄ0ˆN	â´Ž3è0*Óõò´5ä”<jÅ@[ŸMðSƒÕqN©¥¼Öp^`×:©ç]gÙ˜¶ÍÆ×q—˜,ÆÌŒÄ&)4gÖctãžßŠ	|HCAÇ$¦^~X„PKòMeRÛ3£á•-ù;i•I_èÿpG=i7¨~†LÎi§¶OÎe~N2žÀŒ³b.&{Í©©Ážœ”b^‡…­œ®Ú6AãlNm´±¤¡¤ÃA¹^/•‰“®k\«°^šWª†ÍN«Ú¢¶Mj YÔAfÏ
+g¯Í²ÇÀ‚jE?N¤õ×%¬ã®
+t­Ë™³msÎ°ó=hØ{] ÄXrÉª,^q>¹<o–’;iMVÌbÕµ¼kI–D'9ë¸IU;’‡º+‡’©îJ²8o{d²~DÇGñ1¢‘e‰jq]ØÆÌŽáø¤†Oéø4>³áÊð8š!Oå¡ÔÔÈæKe`ÛS—ñ9©ç1Y»¾ ã‹2BfIÕ„Q
+_fbÕ	’9"ƒ›,^Î^x5Ÿ›Ì
+ˆÓ‚„T<£ävÕÇQä!g†«ÛF¬’9Z]š6Ý‹þþøˆS4ìqÃµäw0öæ-*øì{*,ˆÛÆ#KÚšt
+7ê.—[›!£~¥3¤I,‘èÁMiM	mrb,5™{˜n’—§yµL‘¤x‰-RÍ¥áŠutu4òz•ßYÙT*N?<”Ô˜‰P\<k”ÁZ­õe~ÕÈlãm²Í’,±2ä¥ô[¢åª[4‡-yìîÍpË47jVxŸÉ0’âäJ%Ó²eÙçç®m ó} ñ¥%ð"Ø¯à«ìO°&|qùz`?._GªmZ>fÔ^úl5þøAß`oaÎ�™ô*Dº£‰ÞEK½³#}í…ð*âw±›ýD¡wîâàuà7ù?¡�Oó˜^ì@ö ƒÇp”…à|‹3{üãñm|P½$¾KØßc?Ìöûø$8,ÿ~ˆnnÈrÊS`o:ý¬á±»x‚½Ý5È'Þ^C°“®�Çèöst¶_YÕý­Õu[Àðcßuq’4D9²(«¡ïÀ-:º†güçU'Öún@÷±¼¾}ƒ…tg"\Ã©U¼ÜßœN4×“ÿÎ® Ñ	zz¿–ˆ$´.$"ï„or–×{ž÷ï%^£¯°
+)'Ž(­^ /¢C>0D³|{
+“Ü—HfŽ_§¹WîÎñjQŽ>Oú³|ÞÄ-ºCgÖˆ^¤?Q4,â§Œ”&Õû{!Õû9~ARÞTÔiíñûŒ‰ˆM¡aB#¶c÷Ácã(ÇÔDôß<q£ˆašf@R!>¨‚P{ƒ�Ãl»ŸüÆF–Û£· õ­ ý.ú¤ÂVñš”×g&®61nÏSÐôõ¼ò<í¶æo·òR¨žô­‰;â—¶òRGÓ»Ø«ae„¿MÈ[šj1__â\iäŒT¿–Š…7‘éåÇŽPg
+sr4Ôéþ‹7Y¹ÿ¯„GÓñ
+gåþß{k¨6©H’wh³ªÁ•À¿4bü?ÁÑ“i’sSL’×¸â2•7pEœÂµŸU~'•~gÖü>£´g1c,üZéü¦JŠÞÅaA½® ºckºÝT¾òý¤Û„*-@×=,â×šÿŠ¦BÈ—èÃùB¸7_ÃÇWñÙwÖÒ.¦–[Ä½Ðè]k¸ºð~C‹½·Øù8
+ìä—«ÍÏéÏû‰õ¥õÂâ§µCXeö¯4¤uÛ–´á¶Ú÷[ü.›ÀïF¡{;ý/PKñÉªël��­��PK����A�������������6���org/springframework/boot/loader/jar/ManifestInfo.class•TmSW~nØdYHˆåEIëK“ð²ˆT­¡"P´Ñ
+8b3ƒ_:7á‚Ë®³ÙÐñçøÝ¶èÔ™~Ô“ãxÎf¤3~Ø½gïžóœç<çÞóáÓ?ÿø	tÄ×0ÐN)Ïß4Ï}ÛÝÜðåŽúÝó·Íšç¦ãÉuå›[Ò7+Òµ7T#(»ž@ç¬íÚÁÉ¼µ%w¥Ùlç¿Rkß‘î¦¹àyŽ’n©PÕ‘DJƒÎ™»2G>+µ-UâùB5Eüº
+ô -Ü‰�Û¥bÿ^Yœ0všN`?V”°¡ÎACGú5ÄyÞS„RkYUé4UHê©ŽÖ0bà"FúÏæBp›*¨HÛß®
