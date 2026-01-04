@@ -1,5 +1,5 @@
-Jan 03 22:26:50 lesnet systemd[1]: Stopping playit.service - Playit Tunnel Agent...
-Jan 03 22:26:50 lesnet systemd[1]: playit.service: Deactivated successfully.
-Jan 03 22:26:50 lesnet systemd[1]: Stopped playit.service - Playit Tunnel Agent.
-Jan 03 22:26:50 lesnet systemd[1]: playit.service: Consumed 10.373s CPU time.
-Jan 03 22:26:50 lesnet systemd[1]: Started playit.service - Playit Tunnel Agent.
+Got Error
+MSG: failed to save secret, path: /etc/playit/playit.toml
+Error: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+Error: SecretFileWriteError(Os { code: 2, kind: NotFound, message: "No such file or directory" })
+steve9@lesnet:~$ 
