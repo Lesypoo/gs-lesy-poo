@@ -1,3 +1,4 @@
-steve9@lesnet:~$ ps aux | grep java
-amp        20644 94.5 20.6 8055948 841460 pts/1  Sl+  22:08   1:44 /usr/lib/jvm/java-1.21.0-openjdk-arm64/bin/java -Xmx4096M -Xms256M -Djava.net.preferIPv4Stack=true  -jar fabric.jar nogui
-steve9     20932  0.0  0.0   6568  1896 pts/3    S+   22:10   0:00 grep --color=auto java
+steve9@lesnet:~$ sudo netstat -tulnp | grep 25565
+[sudo: authenticate] Password: 
+tcp        0      0 0.0.0.0:25565           0.0.0.0:*               LISTEN      22201/java          
+steve9@lesnet:~$ 
