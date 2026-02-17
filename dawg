@@ -1,5 +1,2 @@
-Got Error
-MSG: failed to save secret, path: /etc/playit/playit.toml
-Error: Os { code: 2, kind: NotFound, message: "No such file or directory" }
-Error: SecretFileWriteError(Os { code: 2, kind: NotFound, message: "No such file or directory" })
-steve9@lesnet:~$ 
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
